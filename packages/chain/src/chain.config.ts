@@ -1,12 +1,11 @@
-import { LocalhostAppChain } from "@proto-kit/cli";
-import runtime from "./runtime";
+import { LocalhostAppChain } from '@proto-kit/cli'
+import runtime from './runtime'
 
-const appChain = LocalhostAppChain.fromRuntime(runtime);
+const appChain = LocalhostAppChain.fromRuntime(runtime.modules)
 
 appChain.configure({
   ...appChain.config,
-
   Runtime: runtime.config,
-});
+})
 
-export default appChain as any;
+export default appChain as any
