@@ -31,7 +31,7 @@ export class Message extends Struct({
 
 @runtimeModule()
 export class SpyMaster extends RuntimeModule<Record<string, never>> {
-  @state() public agents = StateMap.from<UInt64, Agent>(UInt64, Agent)
+  @state() agents = StateMap.from<UInt64, Agent>(UInt64, Agent)
 
   constructor() {
     super()
@@ -70,10 +70,5 @@ export class SpyMaster extends RuntimeModule<Record<string, never>> {
   @runtimeMethod()
   public setAgent(agent: Agent): void {
     this.agents.set(agent.agentId, agent)
-  }
-
-  @runtimeMethod()
-  public getAgent(agentId: UInt64): Agent {
-    return this.agents.get(agentId).value
   }
 }

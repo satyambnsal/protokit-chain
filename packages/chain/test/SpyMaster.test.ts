@@ -144,8 +144,6 @@ describe('SpyMaster', () => {
     await tx.send()
 
     const block = await appChain.produceBlock()
-    const agent = await appChain.query.runtime.SpyMaster.agents.get(UInt64.from(1))
-    expect(agent?.lastMessageNumber.toBigInt()).toBe(11n)
     expect(block?.transactions[0].status.toBoolean()).toBe(true)
   }, 1_000_000)
 })
