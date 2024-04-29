@@ -1,30 +1,22 @@
 # Protokit starter-kit
 
-This repository is a monorepo aimed at kickstarting application chain development using the Protokit framework.
+MINA Navigators challenges solution
 
-## Quick start
+Challenge 3 Spymaster inplementation is in `src/SpyMaster.ts` and test cases is in `test/SpyMaster.test.ts`
 
-The monorepo contains 1 package and 1 app:
 
-- `packages/chain` contains everything related to your app-chain
-- `apps/web` contains a demo UI that connects to your locally hosted app-chain sequencer
+Challenge 4 Spymaster inplementation is in `src/SpyMasterV2.ts` and test cases is in `test/SpyMasterV2.test.ts`
 
-**Prerequisites:**
+## How Could we change the system to ensure that messages are private.
 
-- Node.js v18
-- pnpm
-- nvm
+Right now we send messages over the network to protokit sequencer, so we can say that as soon as transaction leaves the browser, it can't be considered private anymore. To bring privacy in this model, we can take multiple routes, one for example is to encrypt payload in transaction. or we can use ClientAppChain and process inputs directly in the browser and only interact with runtime when we want to update a state, for example updating last message number for a agent.
 
-> If you're on windows, please use Docker until we find a more suitable solution to running the `@proto-kit/cli`. 
-> Run the following command and then proceed to "Running the sequencer & UI":
->
-> `docker run -it --rm -p 3000:3000 -p 8080:8080 -v %cd%:/starter-kit -w /starter-kit gplane/pnpm:node18 bash`
 
 
 ### Setup
 
 ```zsh
-git clone https://github.com/proto-kit/starter-kit my-chain
+git clone https://github.com/satyambnsal/protokit-chain
 cd my-chain
 
 # ensures you have the right node.js version
