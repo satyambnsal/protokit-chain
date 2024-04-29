@@ -42,7 +42,6 @@ export class SpyMaster extends RuntimeModule<Record<string, never>> {
   public receiveMessage(message: Message) {
     let agentId = message.agentId
     let isAgentExist = this.agents.get(agentId).isSome
-    Provable.log(isAgentExist)
 
     assert(isAgentExist, errors.AGENT_NOT_EXIST)
 
