@@ -5,6 +5,8 @@ MINA Navigators challenges solution
 Challenge 3 Spymaster inplementation is in `src/SpyMaster.ts` and test cases is in `test/SpyMaster.test.ts`
 
 
+Challenge 4 Spymaster inplementation is in `src/SpyMasterV2.ts` and test cases is in `test/SpyMasterV2.test.ts`
+
 ## How Could we change the system to ensure that messages are private.
 
 Right now we send messages over the network to protokit sequencer, so we can say that as soon as transaction leaves the browser, it can't be considered private anymore. To bring privacy in this model, we can take multiple routes, one for example is to encrypt payload in transaction. or we can use ClientAppChain and process inputs directly in the browser and only interact with runtime when we want to update a state, for example updating last message number for a agent.
